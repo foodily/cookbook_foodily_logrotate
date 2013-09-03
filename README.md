@@ -1,4 +1,4 @@
-# foo cookbook
+# foodily_logrotate cookbook
 
 # Requirements
 

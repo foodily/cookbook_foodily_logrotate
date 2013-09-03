@@ -3,12 +3,13 @@
 
 include_attribute "logrotate"
 
-
+default[:logrotate][:global][:daily]=true
+default[:logrotate][:global][:weekly]=false
+default[:logrotate][:global][:monthly]=false
+default[:logrotate][:global][:yearly]=false
 #foodily global defaults
 
-default[:logrotate][:global][:daily]=true
 default[:logrotate][:global][:copytruncate]=true
-default[:logrotate][:global][:daily]=true
 default[:logrotate][:global][:delaycompress]=true
 default[:logrotate][:global][:missingok]=true
 default[:logrotate][:global][:nocompress]=false
