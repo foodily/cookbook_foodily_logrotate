@@ -8,6 +8,3 @@
 #
 include_recipe 'logrotate::global'
 
-
-
-# todo - extend LWRP to add file to logstash

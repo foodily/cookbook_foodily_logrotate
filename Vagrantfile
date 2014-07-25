@@ -7,7 +7,7 @@ Vagrant.configure("2") do |config|
 
   config.vm.box_url = "https://opscode-vm.s3.amazonaws.com/vagrant/opscode_ubuntu-12.04_chef-11.4.4.box"
   config.vm.box = "opscode_ubuntu-12.04_chef-11.4.4"
-  config.omnibus.chef_vesion = :latest
+  config.omnibus.chef_version = :latest
   config.vm.network :private_network, ip: "33.33.33.10"
 
   config.vm.network :public_network
@@ -24,8 +24,6 @@ Vagrant.configure("2") do |config|
   # end
   #
 
-  config.ssh.max_tries = 40
-  config.ssh.timeout   = 120
 
   # The path to the Berksfile to use with Vagrant Berkshelf
   # config.berkshelf.berksfile_path = "./Berksfile"
@@ -48,7 +46,7 @@ Vagrant.configure("2") do |config|
         :server_repl_password => 'replpass'
       }
     }
-
+    chef.log_level = :debug
     chef.run_list = [
         "recipe[foodily_logrotate::default]"
     ]
